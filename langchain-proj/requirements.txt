@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain-core
+
+langchain-openai       # OpenAI
+langchain-anthropic    # Claude
+dashscope
+
+langgraph             # Agent 运行时（新版必装）
