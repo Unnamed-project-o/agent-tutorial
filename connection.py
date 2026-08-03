@@ -23,16 +23,14 @@ messages = [
 ]
 completion = client.chat.completions.create(
     # You can replace it with other models, such as "qwen3-mini", "qwen3-medium", etc.
-    model="qwen3-max",
+    model="qwen3.7-plus",
     messages=messages,
     extra_body={"enable_thinking": True},
     stream=True
 )
-# Whether enter the answering phase
-is_answering = False
+
+# 打印结果
 for chunk in completion:
     delta = chunk.choices[0].delta
     if hasattr(delta, "content") and delta.content:
-        if not is_answering:
-            is_answering = True
         print(delta.content, end="", flush=True)
